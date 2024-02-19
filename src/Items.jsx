@@ -1,12 +1,13 @@
 import React from "react";
 import SingleItem from "./SingleItem";
-const Items = ({ items, setItems, setLocalStorage }) => {
+const Items = ({ items, toast, setItems, setLocalStorage }) => {
   const removeItems = (id) => {
     setItems((cur) => {
       const newItem = cur.filter((c) => c.id != id);
       setLocalStorage(newItem);
       return newItem;
     });
+    toast.success("item deleted from the list");
   };
   const editItem = (id) => {
     const newItems = items.map((c) => {

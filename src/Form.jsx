@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-const Form = ({ items, setItems, setLocalStorage }) => {
+const Form = ({ items, toast,setItems, setLocalStorage }) => {
   return (
     <form
       className="form-control"
@@ -14,6 +14,7 @@ const Form = ({ items, setItems, setLocalStorage }) => {
           id: nanoid(),
           completed: false,
         };
+        toast.success('item added to the list')
         setItems([...items, newItem]);
         setLocalStorage([...items, newItem])
       }}
