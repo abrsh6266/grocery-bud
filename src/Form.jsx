@@ -7,6 +7,7 @@ const Form = ({ items, toast,setItems, setLocalStorage }) => {
       onSubmit={(e) => {
         e.preventDefault();
         if(!e.currentTarget.name.value){
+          toast.error('cannot add empty name')
           return
         }
         const newItem = {
