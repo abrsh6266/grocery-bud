@@ -2,10 +2,10 @@ import { useState } from "react";
 import Form from "./Form";
 
 const App = () => {
-  const [items, setItems] = useState("");
+  const [items, setItems] = useState([]);
+  console.log(items)
   return <section className="section-center">
-    <h4>Grocery bud</h4>
-    <Form />
+    <Form setItems={setItems} items={items}/>
   </section>;
 };
 
